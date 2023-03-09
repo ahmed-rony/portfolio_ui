@@ -1,0 +1,369 @@
+@import "../../../style.scss";
+
+.testimonial {
+    @include themify($themes) {
+        padding: 100px 0;
+        background: themed("bg");
+
+        h2 {
+            font-size: 40px !important;
+
+            @include tablet {
+                font-size: 40px !important;
+            }
+
+            @include mobile {
+                font-size: 30px !important;
+                color: themed("icon") !important;
+            }
+        }
+
+        .hr {
+            width: 100% !important;
+            margin-bottom: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 30px 0;
+
+            @include tablet {
+                gap: 20px;
+            }
+
+            @include mobile {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .left-card {
+                background: themed("bgSoft");
+                padding: 30px;
+                box-shadow: 10px 10px 19px themed("shadow1"), -10px -10px 19px themed("shadow2");
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+
+                @include tablet {
+                    padding: 30px 20px;
+                }
+
+                @include mobile {
+                    padding: 30px 20px;
+                }
+
+                &:hover {
+                    .t-img {
+                        img {
+                            transform: scale(1.1);
+                            -webkit-transform: scale(1.1);
+                            -moz-transform: scale(1.1);
+                            -ms-transform: scale(1.1);
+                            -o-transform: scale(1.1);
+                        }
+                    }
+                }
+
+                .t-img {
+                    width: 330px;
+                    height: 250px;
+                    overflow: hidden;
+                    margin-bottom: 30px;
+
+                    @include tablet {
+                        width: 270px;
+                        height: 220px;
+                    }
+
+                    @include mobile {
+                        width: 220px;
+                        height: 180px;
+                        margin-bottom: 15px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: all ease 0.4s;
+                        -webkit-transition: all ease 0.4s;
+                        -moz-transition: all ease 0.4s;
+                        -ms-transition: all ease 0.4s;
+                        -o-transition: all ease 0.4s;
+                    }
+
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                }
+
+                small {
+                    font-weight: 600;
+                    font-size: 13px;
+                    color: #ff9431;
+                    letter-spacing: 2px;
+                }
+
+                h4 {
+                    padding-top: 10px;
+                    font-size: 26px;
+                    font-weight: 600;
+                    color: themed("textColor1");
+                    margin-bottom: 0;
+
+
+                    @include tablet {
+                        font-weight: 500;
+                    }
+
+                    @include mobile {
+                        font-size: 24px;
+                        font-weight: 500;
+                    }
+                }
+
+                span {
+                    font-size: 15px;
+                    font-weight: 400;
+                    color: themed("textColor2");
+
+                    @include tablet {
+                        font-size: 15px;
+                    }
+
+                    @include mobile {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .right-card {
+                width: 650px;
+
+                @include tablet {
+                    width: 100%;
+                }
+
+                @include mobile {
+                    width: 100%;
+                }
+
+                .icon {
+                    font-size: 170px;
+                    margin-top: -44px;
+                    margin-left: -31px;
+                    color: themed("icon");
+
+                    @include tablet {
+                        display: none;
+                    }
+
+                    @include mobile {
+                        display: none;
+                    }
+                }
+
+                .content {
+                    height: 303px;
+                    padding: 30px;
+                    border-radius: 10px;
+                    -webkit-border-radius: 10px;
+                    -moz-border-radius: 10px;
+                    -ms-border-radius: 10px;
+                    -o-border-radius: 10px;
+                    background: themed("bgSoft");
+                    box-shadow: 10px 10px 19px themed("shadow1"), -10px -10px 19px themed("shadow2");
+
+                    @include tablet {
+                        height: fit-content;
+                        padding: 20px;
+                        min-height: 310px;
+                    }
+
+                    @include mobile {
+                        height: fit-content;
+                        padding-bottom: 20px;
+                    }
+
+
+                    .title {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        @include tablet {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 10px;
+                        }
+
+                        @include mobile {
+                            flex-direction: column;
+                            align-items: flex-start;
+                            gap: 15px;
+                        }
+
+                        .info {
+                            h4 {
+                                font-size: 26px;
+                                font-weight: 600;
+                                color: themed("textColor1");
+                                margin-bottom: 3px;
+
+                                @include tablet {
+                                    font-size: 25px;
+                                    font-weight: 500;
+                                }
+
+                                @include mobile {
+                                    font-size: 22px;
+                                    font-weight: 500;
+                                }
+                            }
+
+                            span {
+                                font-size: 17px;
+                                font-weight: 500;
+                                color: #777777;
+
+                                @include tablet {
+                                    font-size: 16px;
+                                }
+
+                                @include mobile {
+                                    font-size: 15px;
+                                }
+
+                            }
+                        }
+
+                        .rating {
+                            padding: 10px;
+                            box-shadow: 10px 10px 19px themed("shadow1"), -10px -10px 19px themed("shadow2");
+                            border-radius: 5px;
+                            -webkit-border-radius: 5px;
+                            -moz-border-radius: 5px;
+                            -ms-border-radius: 5px;
+                            -o-border-radius: 5px;
+
+                            @include tablet {
+                                padding: 7px;
+                            }
+
+                            @include mobile {
+                                padding: 5px;
+                            }
+                        }
+                    }
+
+                    .hr {
+                        width: 100%;
+                        margin: 15px 0 25px;
+
+                        @include mobile {
+                            margin: 20px 0;
+                        }
+                    }
+
+                    p {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: themed("textColor2");
+                        line-height: 30px;
+
+                        @include tablet {
+                            font-size: 17px;
+                            line-height: 29px;
+                        }
+
+                        @include mobile {
+                            font-size: 16px;
+                            line-height: 28px;
+                        }
+
+                    }
+                }
+            }
+        }
+
+
+        .slick-dots li button:before {
+            font-size: 0 !important;
+            width: 13px !important;
+            height: 13px !important;
+            box-shadow: inset 1px 1px 3px themed("hr1"),
+                inset -1px -1px 3px themed("hr2");
+            border-radius: 50%;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            opacity: 0.8 !important;
+        }
+
+        .slick-dots li.slick-active button:before {
+            background: themed("paralaxText");
+        }
+
+        .slick-arrow {
+            width: 70px !important;
+            height: 70px !important;
+            box-shadow: 10px 10px 19px themed("shadow1"), -10px -10px 19px themed("shadow2");
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            z-index: 999;
+            background: themed("bgSoft") !important;
+
+        }
+
+        .slick-slider {
+            position: relative;
+
+            .slick-next {
+                display: inline-block !important;
+                position: absolute !important;
+                top: 70px !important;
+                right: 75px !important;
+
+                @include tablet {
+                    display: none !important;
+                }
+
+                @include mobile {
+                    display: none !important;
+                }
+            }
+
+            .slick-prev {
+                display: inline-block !important;
+                position: absolute !important;
+                top: 70px !important;
+                right: 165px !important;
+                left: inherit;
+
+                @include tablet {
+                    display: none !important;
+                }
+
+                @include mobile {
+                    display: none !important;
+                }
+            }
+
+            .slick-arrow:before {
+                color: themed("arrow") !important;
+                font-size: 30px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*::selection{
+  background: #ffcd9f;
+  color: #fff;
+}
+img {
+  vertical-align: middle !important;
+}
+a {
+  text-decoration: none !important;
+}
+ul {
+  list-style: none !important;
+  margin-bottom: 0 !important;
+  padding-left: 0 !important;
+}
+.f-os {
+  font-family: "Oswald", sans-serif;
+}
+.f-po {
+  font-family: "Poppins", sans-serif;
+}

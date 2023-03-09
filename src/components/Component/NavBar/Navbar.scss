@@ -1,0 +1,287 @@
+@import "../../../style.scss";
+
+.navbar {
+  @include themify($themes) {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    background: themed("bg");
+
+    @include mobile {
+      height: 120px;
+      padding: 10px 0 20px;
+    }
+
+    .logo{
+      position: absolute;
+      top: 0;
+    }
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      width: 1250px;
+      gap: 20px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        gap: 35px;
+
+        @include mobile {
+          display: none !important;
+        }
+
+        li {
+          position: relative;
+          cursor: pointer;
+          color: themed("textColor1");
+
+          &::before {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: themed("textColor1");
+            position: absolute;
+            left: -20%;
+            top: -3px;
+            transition: all ease 0.4s;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+          }
+
+          &::after {
+            content: "";
+            width: 0;
+            height: 1px;
+            background: themed("textColor1");
+            position: absolute;
+            right: -20%;
+            bottom: -3px;
+            transition: all ease 0.4s;
+            -webkit-transition: all ease 0.4s;
+            -moz-transition: all ease 0.4s;
+            -ms-transition: all ease 0.4s;
+            -o-transition: all ease 0.4s;
+          }
+
+          &:hover {
+            &::before {
+              width: 140%;
+            }
+
+            &::after {
+              width: 140%;
+            }
+          }
+        }
+      }
+
+      .nav-burger {
+        font-size: 40px;
+        color: themed("textColor1");
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
+      }
+
+      .burger {
+        position: relative;
+        width: 40px;
+        height: 30px;
+        background: transparent;
+        cursor: pointer;
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      .burger input {
+        display: none;
+      }
+
+      .burger span {
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background: themed("textColor1");
+        border-radius: 9px;
+        opacity: 1;
+        right: 0;
+        transform: rotate(0deg);
+        transition: 0.25s ease-in-out;
+        -webkit-transition: 0.25s ease-in-out;
+        -moz-transition: 0.25s ease-in-out;
+        -ms-transition: 0.25s ease-in-out;
+        -o-transition: 0.25s ease-in-out;
+      }
+
+      .burger span.top {
+        top: 0px;
+        transform-origin: left center;
+      }
+
+      .burger span.middle {
+        top: 50%;
+        transform: translateY(-50%);
+        transform-origin: left center;
+      }
+
+      .burger span.bottom {
+        top: 100%;
+        transform-origin: left center;
+        transform: translateY(-100%);
+      }
+
+      .burger input:checked ~ span.top {
+        top: 0px;
+        left: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+
+        @include mobile {
+          transform: rotate(47deg);
+          -webkit-transform: rotate(47deg);
+          -moz-transform: rotate(47deg);
+          -ms-transform: rotate(47deg);
+          -o-transform: rotate(47deg);
+        }
+      }
+
+      .burger input:checked ~ span.middle {
+        width: 0%;
+        opacity: 0;
+      }
+
+      .burger input:checked ~ span.bottom {
+        top: 28px;
+        left: 5px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+
+        @include mobile {
+          top: 22px;
+          transform: rotate(-47deg);
+          -webkit-transform: rotate(-47deg);
+          -moz-transform: rotate(-47deg);
+          -ms-transform: rotate(-47deg);
+          -o-transform: rotate(-47deg);
+        }
+      }
+    }
+
+    .drawer-nav{
+        width: 200px !important;
+        height: 100%;
+        background: themed("bgSoft") !important;
+
+        .nav-offcanvas {
+          height: 100% !important;
+          display: none;
+          padding: 50px 15px;
+          position: relative;
+          z-index: 9999;
+    
+          @include mobile {
+            display: block;
+          }
+    
+          .off-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: themed("icon");
+            display: none;
+          }
+    
+          .mode {
+            display: none;
+            position: absolute;
+            top: 12px;
+            left: 15px;
+    
+            @include mobile {
+              display: block;
+            }
+    
+            .switch {
+              --width-of-switch: 3em;
+              --height-of-switch: 1.3em;
+              --size-of-icon: 1em;
+              --slider-offset: 0.3em;
+            }
+          }
+    
+          ul {
+            flex-direction: column !important;
+            justify-items: center !important;
+            gap: 20px;
+    
+            li {
+              position: relative;
+              cursor: pointer;
+              color: themed("textColor1");
+    
+              &::before {
+                content: "";
+                width: 0;
+                height: 1px;
+                background: themed("textColor1");
+                position: absolute;
+                left: 0;
+                top: -3px;
+                transition: all ease 0.4s;
+                -webkit-transition: all ease 0.4s;
+                -moz-transition: all ease 0.4s;
+                -ms-transition: all ease 0.4s;
+                -o-transition: all ease 0.4s;
+              }
+    
+              &::after {
+                content: "";
+                width: 0;
+                height: 1px;
+                background: themed("textColor1");
+                position: absolute;
+                right: 0;
+                bottom: -3px;
+                transition: all ease 0.4s;
+                -webkit-transition: all ease 0.4s;
+                -moz-transition: all ease 0.4s;
+                -ms-transition: all ease 0.4s;
+                -o-transition: all ease 0.4s;
+              }
+    
+              &:hover {
+                &::before {
+                  width: 100%;
+                }
+    
+                &::after {
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+    }
+  }
+}
